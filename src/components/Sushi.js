@@ -3,18 +3,18 @@ import React from "react";
 function Sushi(props) {
   return (
     <div className="sushi">
-      <div className="plate" onClick={/* Give me a callback! */ null}>
+      <div className="plate" onClick={ () => props.handleEatSushi(props.sushi)}>
         {/* Tell me if this sushi has been eaten! */}
-        {false ? null : (
+        {props.sushi.eaten? null : (
           <img
-            src={/* Give me an image source! */ null}
-            alt={/* Give me a name! */ "Sushi"}
+            src={props.sushi.img_url}
+            alt={props.sushi.name}
             width="100%"
           />
         )}
       </div>
       <h4 className="sushi-details">
-        {/* Give me a name! */} - ${/* Give me a price! */}
+        {props.sushi.name} - ${props.sushi.price}
       </h4>
     </div>
   );
